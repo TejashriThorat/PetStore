@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} search pets {% endblock %}
+{% block body%}
+
+    <h1>Search Pets for {{query}}</h1>
+    <table border="2" class="table table-sm table-bordered border-primary table-secondary" width="500px">
+        <tr>
+            <th>Sr. No</th>
+            <th>Pet Name</th>
+            <th>Desciption</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr><br>
+        {% for x in products %}
+        <tr style="text-align: center;">
+            <td>{{forloop.counter}}</td>
+            <td>{{x.pet_name}}</td>
+            <td>{{x.desc}}</td>
+            <td>{{x.price}}</td>
+            <td><img src="{{x.image.url}}"style="width:50%; height:200px"></td>
+
+        </tr>
+        {% endfor%}
+    </table>
+{% endblock %} 
